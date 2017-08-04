@@ -1,0 +1,17 @@
+---
+insecureStashDownload: true
+image: proboci/ubuntu-14.04-lamp:php-7.1
+
+steps:
+  - name: Prepare
+    plugin: Script
+    script:
+      - cp -r "$SRC_DIR" /test-module
+      - composer self-update
+      - composer install -n --prefer-dist --working-dir=$SRC_DIR
+      - $SRC_DIR/vendor/deloittedigital/qd_test/setup.sh
+
+  - name: Run tests
+    plugin: Script
+    script:
+      - $SRC_DIR/vendor/deloittedigital/qd_test/run_tests.sh

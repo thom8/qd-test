@@ -1,0 +1,23 @@
+{
+  "name": "deloittedigital/qd_test",
+  "type": "composer-plugin",
+  "description": "Test package for QD modules",
+  "minimum-stability": "dev",
+  "require": {
+    "composer-plugin-api": "^1.0"
+  },
+  "require-dev": {
+    "composer/composer": "^1.5@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "DeloitteDigital\\QdTest\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "DeloitteDigital\\QdTest\\Plugin",
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
